@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 940" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="1440" height="940" fill="#ffffff"/>
+
+  <!-- top promo bar -->
+  <rect x="0" y="0" width="1440" height="44" fill="#111111"/>
+  <text x="60" y="28" font-size="14" fill="#ffffff">다노샵 회원가입 시 최대 10만원 쿠폰팩 증정</text>
+  <text x="1380" y="28" font-size="13" fill="#cfcfcf" text-anchor="end">오늘 하루 보지 않기  ✕</text>
+
+  <!-- header -->
+  <text x="60" y="100" font-size="20" font-style="italic" fill="#F2622E" font-family="'Segoe Script','Brush Script MT',cursive">healthy can be easy!</text>
+  <text x="58" y="140" font-size="34" font-weight="800" fill="#111111">DANO</text>
+  <text x="184" y="140" font-size="34" font-weight="300" fill="#111111">SHOP</text>
+
+  <text x="1380" y="96" font-size="13" fill="#666666" text-anchor="end">포트폴리오테스트님 환영합니다!  로그아웃  주문조회  최근본상품  고객센터 ›</text>
+
+  <!-- cart icon -->
+  <g transform="translate(1300,160)">
+    <rect x="0" y="8" width="34" height="26" rx="4" fill="none" stroke="#111111" stroke-width="2"/>
+    <path d="M8,8 L8,2 Q17,-6 26,2 L26,8" fill="none" stroke="#111111" stroke-width="2"/>
+    <circle cx="30" cy="4" r="9" fill="#F2622E"/>
+    <text x="30" y="8" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">1</text>
+  </g>
+  <g transform="translate(1360,160)">
+    <circle cx="12" cy="12" r="9" fill="none" stroke="#111111" stroke-width="2"/>
+    <line x1="19" y1="19" x2="28" y2="28" stroke="#111111" stroke-width="2"/>
+  </g>
+
+  <line x1="0" y1="216" x2="1440" y2="216" stroke="#eeeeee" stroke-width="1"/>
+
+  <!-- category nav -->
+  <text x="60" y="252" font-size="15" font-weight="700" fill="#111111">전 상품</text>
+  <text x="150" y="252" font-size="15" font-weight="700" fill="#F2622E">SALE</text>
+  <line x1="0" y1="276" x2="1440" y2="276" stroke="#eeeeee" stroke-width="1"/>
+
+  <!-- breadcrumb -->
+  <text x="1380" y="322" font-size="13" fill="#999999" text-anchor="end">홈 / 장바구니 / 주문서 작성</text>
+
+  <!-- title -->
+  <text x="720" y="392" font-size="34" font-weight="700" fill="#111111" text-anchor="middle">주문서 작성</text>
+
+  <!-- step indicator -->
+  <g font-size="14" text-anchor="middle">
+    <text x="600" y="440" fill="#999999">1. 장바구니</text>
+    <text x="686" y="440" fill="#cccccc">›</text>
+    <text x="760" y="440" fill="#111111" font-weight="700">2. 주문서 작성</text>
+    <text x="850" y="440" fill="#cccccc">›</text>
+    <text x="930" y="440" fill="#999999">3. 주문완료</text>
+  </g>
+  <line x1="0" y1="470" x2="1440" y2="470" stroke="#eeeeee" stroke-width="1"/>
+
+  <!-- left column: 주문상품 -->
+  <text x="60" y="522" font-size="17" font-weight="700" fill="#111111">주문상품 (1)</text>
+  <line x1="60" y1="540" x2="860" y2="540" stroke="#e5e5e5" stroke-width="1"/>
+
+  <g transform="translate(60,566)">
+    <rect x="0" y="0" width="96" height="96" rx="8" fill="#F6EFE6"/>
+    <rect x="22" y="30" width="52" height="50" rx="10" fill="#E9DCC8"/>
+    <rect x="30" y="22" width="36" height="14" rx="6" fill="#DDC9A8"/>
+    <line x1="30" y1="56" x2="66" y2="56" stroke="#F6EFE6" stroke-width="2"/>
+
+    <text x="118" y="20" font-size="15" fill="#111111" font-weight="600">[다노] 자이언트 브라운라이스소울 프로틴 2종</text>
+    <text x="118" y="42" font-size="15" fill="#111111" font-weight="600">식사대용 현미 시리얼 그래놀라</text>
+    <text x="118" y="68" font-size="13" fill="#888888">[옵션: 자이언트 브라운라이스소울 프로틴_베리]</text>
+    <text x="118" y="90" font-size="13" fill="#888888">수량 3개 · 배송비 3,500원 [무료조건] / 기본배송</text>
+
+    <text x="800" y="30" font-size="13" fill="#999999" text-anchor="end">32,000원 × 3</text>
+    <text x="800" y="56" font-size="18" fill="#111111" font-weight="700" text-anchor="end">96,000원</text>
+  </g>
+
+  <line x1="60" y1="700" x2="860" y2="700" stroke="#e5e5e5" stroke-width="1"/>
+
+  <!-- 배송지 정보 -->
+  <text x="60" y="748" font-size="17" font-weight="700" fill="#111111">배송지 정보</text>
+  <rect x="60" y="766" width="800" height="108" rx="8" fill="#FAFAFA" stroke="#eeeeee"/>
+  <text x="84" y="800" font-size="13" fill="#555555">받는사람</text>
+  <text x="200" y="800" font-size="13" fill="#111111" font-weight="600">이정후</text>
+  <text x="84" y="828" font-size="13" fill="#555555">연락처</text>
+  <text x="200" y="828" font-size="13" fill="#111111" font-weight="600">010-****-8720</text>
+  <text x="84" y="856" font-size="13" fill="#555555">배송지</text>
+  <text x="200" y="856" font-size="13" fill="#111111" font-weight="600">서울시 마포구 월드컵북로 5길 68 602호</text>
+
+  <!-- right column: 결제 정보 카드 -->
+  <rect x="920" y="500" width="460" height="230" rx="10" fill="#ffffff" stroke="#e5e5e5" stroke-width="1.5"/>
+  <text x="952" y="542" font-size="15" fill="#555555">총 상품금액</text>
+  <text x="1348" y="542" font-size="15" fill="#111111" text-anchor="end">96,000원</text>
+  <text x="952" y="576" font-size="15" fill="#555555">총 배송비</text>
+  <text x="1348" y="576" font-size="15" fill="#111111" text-anchor="end">0원</text>
+  <line x1="952" y1="602" x2="1348" y2="602" stroke="#eeeeee" stroke-width="1"/>
+  <text x="952" y="656" font-size="16" fill="#111111" font-weight="700">결제예정금액</text>
+  <text x="1348" y="660" font-size="26" fill="#F2622E" font-weight="800" text-anchor="end">96,000원</text>
+
+  <!-- 결제수단 -->
+  <text x="920" y="770" font-size="15" font-weight="700" fill="#111111">결제 수단</text>
+  <g font-size="13" font-weight="600">
+    <rect x="920" y="784" width="110" height="40" rx="20" fill="#ffffff" stroke="#dddddd"/>
+    <text x="975" y="809" fill="#999999" text-anchor="middle">신용카드</text>
+
+    <rect x="1042" y="784" width="120" height="40" rx="20" fill="#ffffff" stroke="#dddddd"/>
+    <text x="1102" y="809" fill="#999999" text-anchor="middle">무통장입금</text>
+
+    <rect x="1174" y="784" width="126" height="40" rx="20" fill="#FEE500" stroke="#FEE500"/>
+    <path d="M1195,796 q7,-6 14,0 q3,5 -2,10 l1,4 l-4,-2 q-9,1 -9,-5 q0,-4 0,-7 z" fill="#391B1B"/>
+    <text x="1247" y="809" fill="#391B1B" text-anchor="middle">카카오페이</text>
+  </g>
+
+  <!-- CTA button -->
+  <rect x="920" y="846" width="460" height="64" rx="10" fill="#FEE500"/>
+  <text x="1150" y="886" font-size="19" font-weight="800" fill="#391B1B" text-anchor="middle">카카오페이로 96,000원 결제하기</text>
+</svg>
