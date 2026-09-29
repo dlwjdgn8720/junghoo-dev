@@ -25,11 +25,11 @@
     <div class="rail-role">Backend Engineer</div>
     <ul class="rail-nav">
       <li><a href="#intro"><span class="n">00</span>소개</a></li>
-      <li><a href="#education"><span class="n">01</span>학력</a></li>
-      <li><a href="#career"><span class="n">02</span>경력</a></li>
-      <li><a href="#training"><span class="n">03</span>교육</a></li>
-      <li><a href="#projects"><span class="n">04</span>프로젝트</a></li>
-      <li><a href="#skills"><span class="n">05</span>기술 스택</a></li>
+      <li><a href="#skills"><span class="n">01</span>기술 스택</a></li>
+      <li><a href="#education"><span class="n">02</span>학력</a></li>
+      <li><a href="#career"><span class="n">03</span>경력</a></li>
+      <li><a href="#training"><span class="n">04</span>교육</a></li>
+      <li><a href="#projects"><span class="n">05</span>프로젝트</a></li>
     </ul>
   </nav>
 
@@ -74,8 +74,67 @@
       </p>
     </section>
 
+    <section id="skills">
+      <div class="eyebrow">01 · Stack</div>
+      <h2 style="font-size:1.7rem; margin-bottom:24px;">기술 스택</h2>
+      <div class="skills-wrap">
+        <table class="skills">
+          <tbody>
+            <tr>
+              <th>백엔드</th>
+              <td>Java/Spring Boot 기반 MSA 개발, Python FastAPI 비동기 REST API, Node.js(Express) REST API 구현</td>
+            </tr>
+            <tr>
+              <th>프론트엔드</th>
+              <td>React, Vite, JavaScript(ES6+) 기반 SPA 및 상태 관리</td>
+            </tr>
+            <tr>
+              <th>데이터베이스</th>
+              <td>Oracle → MySQL 마이그레이션 및 표준 쿼리 전환, AWS RDS 운영, 스키마·인덱스 설계</td>
+            </tr>
+            <tr>
+              <th>비즈니스 로직</th>
+              <td>도메인 단위 서비스 분리(MSA), Spring Data JPA &amp; QueryDSL 기반 동적 쿼리 설계</td>
+            </tr>
+            <tr>
+              <th>데이터 분석</th>
+              <td>Pandas·NumPy 기반 데이터 전처리 및 분석, 사이킷런(scikit-learn) 기반 머신러닝 모델링</td>
+            </tr>
+            <tr>
+              <th>코드 로직</th>
+              <td>Fetch Join·DTO Projection을 통한 N+1 문제 해결, XGBoost/로지스틱 회귀 스태킹 앙상블 설계</td>
+            </tr>
+            <tr>
+              <th>트래픽 처리</th>
+              <td>동시 접속자 증가에 따른 서버·DB 병목 분석 및 API 응답 경량화</td>
+            </tr>
+            <tr>
+              <th>예외 처리</th>
+              <td>외부 API 실패·레이트리밋 대응 재시도 및 폴백 파이프라인 설계</td>
+            </tr>
+            <tr>
+              <th>테스트</th>
+              <td>실측 로그 기반 구간별 성능 분석, 모델 교체 전후 A/B 비교 검증</td>
+            </tr>
+            <tr>
+              <th>개발환경 및 배포</th>
+              <td>Jenkins CI/CD 파이프라인, Docker/Docker Compose, Nginx 배포 구성</td>
+            </tr>
+            <tr>
+              <th>API 활용</th>
+              <td>Henrik(Valorant) API, Anthropic Claude API, 카카오 OAuth 2.0 연동</td>
+            </tr>
+            <tr>
+              <th>협업</th>
+              <td>Git/GitHub 브랜치 전략 및 코드 리뷰, Notion 기반 문서화</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
     <section id="education">
-      <div class="eyebrow">01 · Education</div>
+      <div class="eyebrow">02 · Education</div>
       <h2 style="font-size:1.7rem; margin-bottom:24px;">학력</h2>
       <div class="edu-grid">
         <div class="edu-card">
@@ -117,7 +176,7 @@
     </section>
 
     <section id="career">
-      <div class="eyebrow">02 · Career</div>
+      <div class="eyebrow">03 · Career</div>
       <h2 style="font-size:1.7rem; margin-bottom:24px;">경력</h2>
 
       <div class="org-band">
@@ -471,7 +530,7 @@ df_importance = pd.Series(importances, index=X.columns).sort_values(ascending=Fa
     </section>
 
     <section id="training">
-      <div class="eyebrow">03 · Training</div>
+      <div class="eyebrow">04 · Training</div>
       <h2 style="font-size:1.7rem; margin-bottom:24px;">교육</h2>
 
       <div class="org-band">
@@ -502,7 +561,7 @@ df_importance = pd.Series(importances, index=X.columns).sort_values(ascending=Fa
     </section>
 
     <section id="projects">
-      <div class="eyebrow">04 · Projects</div>
+      <div class="eyebrow">05 · Projects</div>
       <h2 style="font-size:1.7rem; margin-bottom:24px;">프로젝트</h2>
 
       <div class="proj">
@@ -707,61 +766,6 @@ df_importance = pd.Series(importances, index=X.columns).sort_values(ascending=Fa
         </div>
 
         <p class="proj-quote">"짧은 학사 일정 안에서도 인증·알림·추천까지 각 계층을 직접 구현해 본 경험이 이후 실무 학습의 기반이 되었습니다."</p>
-      </div>
-    </section>
-
-    <section id="skills">
-      <div class="eyebrow">05 · Stack</div>
-      <h2 style="font-size:1.7rem; margin-bottom:24px;">기술 스택</h2>
-      <div class="skills-wrap">
-        <table class="skills">
-          <tbody>
-            <tr>
-              <th>백엔드</th>
-              <td>Java/Spring Boot 기반 MSA 개발, Python FastAPI 비동기 REST API, Node.js(Express) REST API 구현</td>
-            </tr>
-            <tr>
-              <th>프론트엔드</th>
-              <td>React, Vite, JavaScript(ES6+) 기반 SPA 및 상태 관리</td>
-            </tr>
-            <tr>
-              <th>데이터베이스</th>
-              <td>Oracle → MySQL 마이그레이션 및 표준 쿼리 전환, AWS RDS 운영, 스키마·인덱스 설계</td>
-            </tr>
-            <tr>
-              <th>비즈니스 로직</th>
-              <td>도메인 단위 서비스 분리(MSA), Spring Data JPA &amp; QueryDSL 기반 동적 쿼리 설계</td>
-            </tr>
-            <tr>
-              <th>코드 로직</th>
-              <td>Fetch Join·DTO Projection을 통한 N+1 문제 해결, XGBoost/로지스틱 회귀 스태킹 앙상블 설계</td>
-            </tr>
-            <tr>
-              <th>트래픽 처리</th>
-              <td>동시 접속자 증가에 따른 서버·DB 병목 분석 및 API 응답 경량화</td>
-            </tr>
-            <tr>
-              <th>예외 처리</th>
-              <td>외부 API 실패·레이트리밋 대응 재시도 및 폴백 파이프라인 설계</td>
-            </tr>
-            <tr>
-              <th>테스트</th>
-              <td>실측 로그 기반 구간별 성능 분석, 모델 교체 전후 A/B 비교 검증</td>
-            </tr>
-            <tr>
-              <th>개발환경 및 배포</th>
-              <td>Jenkins CI/CD 파이프라인, Docker/Docker Compose, Nginx 배포 구성</td>
-            </tr>
-            <tr>
-              <th>API 활용</th>
-              <td>Henrik(Valorant) API, Anthropic Claude API, 카카오 OAuth 2.0 연동</td>
-            </tr>
-            <tr>
-              <th>협업</th>
-              <td>Git/GitHub 브랜치 전략 및 코드 리뷰, Notion 기반 문서화</td>
-            </tr>
-          </tbody>
-        </table>
       </div>
     </section>
 
