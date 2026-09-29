@@ -323,11 +323,11 @@ df_importance = pd.Series(importances, index=X.columns).sort_values(ascending=Fa
           <div class="idx">05</div>
           <div>
             <h3>도메인 간 통신 설계 — REST API 동기 연동 &amp; Kafka 비동기 이벤트 처리</h3>
-            <p>MSA 전환으로 분리된 회원·주문·매장·결제 서비스 간 통신을 상황에 맞게 이원화해 설계. 즉시 응답이 필요한 조회성 호출(주문 시 회원 정보 검증 등)은 REST
-              API로 동기 연동하고, 주문 완료 이후 재고 차감·결제 처리처럼 여러 서비스가 후속 처리를 이어받아야 하는 흐름은 Kafka로 이벤트를 발행·구독하는 비동기 구조로 전환해 서비스 간
+            <p>매장 현장의 휴대폰 개통 업무를 가입자·개통·단말·과금 서비스로 분리해 통신을 설계. 개통 신청 시 가입자 자격 확인처럼 즉시 응답이 필요한 조회성 호출은 REST
+              API로 동기 연동하고, 개통 완료 이후 단말 재고 차감·요금제 등록처럼 여러 서비스가 후속 처리를 이어받아야 하는 흐름은 Kafka로 이벤트를 발행·구독하는 비동기 구조로 전환해 서비스 간
               결합도를 낮추고 특정 서비스 장애가 다른 서비스로 전파되는 것을 차단.</p>
             <div class="tags"><span class="tag">REST API</span><span class="tag">Kafka</span><span
-                class="tag">이벤트 기반 아키텍처</span><span class="tag">서비스 간 통신</span></div>
+                class="tag">단말 개통</span><span class="tag">단말 관리</span></div>
           </div>
         </div>
       </div>
@@ -539,7 +539,7 @@ df_importance = pd.Series(importances, index=X.columns).sort_values(ascending=Fa
 
       <div class="case">
         <div class="case-label">Case Study</div>
-        <h3>도메인 간 통신 아키텍처 설계 — REST API &amp; Kafka 하이브리드 연동</h3>
+        <h3>휴대폰 개통 · 단말 관리 도메인 통신 아키텍처 설계 — REST API &amp; Kafka 하이브리드 연동</h3>
 
         <div class="case-highlight">
           <div class="case-metric-num">2 Track<span class="arrow">→</span></div>
@@ -552,17 +552,17 @@ df_importance = pd.Series(importances, index=X.columns).sort_values(ascending=Fa
         <dl class="star">
           <div>
             <dt><span class="star-badge">1</span>문제 상황</dt>
-            <dd>MSA 전환 직후, 분리된 회원·주문·매장·결제 서비스 간 모든 연동을 REST API 동기 호출로만 처리해 특정 서비스 지연·장애가 호출 체인을 타고 전체
+            <dd>MSA 전환 직후, 분리된 가입자·개통·단말·과금 서비스 간 모든 연동을 REST API 동기 호출로만 처리해 특정 서비스 지연·장애가 호출 체인을 타고 전체
               흐름에 전파되는 구조적 위험이 존재.</dd>
           </div>
           <div>
             <dt><span class="star-badge">2</span>해결 과정</dt>
-            <dd>즉시 결과가 필요한 조회성 연동(주문 생성 시 회원 정보 검증 등)은 REST API 동기 호출로 유지하고, 주문 완료 이후 재고 차감·결제 처리처럼 후속
-              처리가 이어지는 흐름은 Kafka Producer/Consumer로 전환해 "주문완료" 이벤트를 발행·구독하는 비동기 구조로 재설계.</dd>
+            <dd>즉시 결과가 필요한 조회성 연동(개통 신청 시 가입자 자격 검증 등)은 REST API 동기 호출로 유지하고, 개통 완료 이후 단말 재고 차감·요금제 등록처럼 후속
+              처리가 이어지는 흐름은 Kafka Producer/Consumer로 전환해 "개통완료" 이벤트를 발행·구독하는 비동기 구조로 재설계.</dd>
           </div>
           <div>
             <dt><span class="star-badge">3</span>결과</dt>
-            <dd>매장(재고)·결제 서비스가 주문 서비스의 처리 상태와 무관하게 이벤트를 각자 소비해 처리하도록 분리되어, 한 서비스의 응답 지연이 다른 서비스의 대기
+            <dd>단말(재고)·과금 서비스가 개통 서비스의 처리 상태와 무관하게 이벤트를 각자 소비해 처리하도록 분리되어, 한 서비스의 응답 지연이 다른 서비스의 대기
               시간으로 직접 전파되지 않는 구조를 확보.</dd>
           </div>
           <div>
@@ -576,7 +576,7 @@ df_importance = pd.Series(importances, index=X.columns).sort_values(ascending=Fa
           <figure class="case-fig">
             <div class="case-fig-label"><span class="dot"></span>01 · REST API &amp; Kafka 하이브리드 통신 구조</div>
             <svg viewBox="0 0 920 300" role="img"
-              aria-label="도메인 간 통신 아키텍처 다이어그램. 주문 서비스가 회원 서비스를 REST API로 동기 조회하고, 주문완료 이벤트를 Kafka에 발행하면 매장 서비스와 결제 서비스가 이를 비동기로 구독해 처리한다.">
+              aria-label="도메인 간 통신 아키텍처 다이어그램. 개통 서비스가 가입자 서비스를 REST API로 동기 조회하고, 개통완료 이벤트를 Kafka에 발행하면 단말 서비스와 과금 서비스가 이를 비동기로 구독해 처리한다.">
               <defs>
                 <marker id="restArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7"
                   orient="auto-start-reverse">
@@ -591,29 +591,29 @@ df_importance = pd.Series(importances, index=X.columns).sort_values(ascending=Fa
               <g font-size="12.5" font-weight="600">
                 <rect x="30" y="40" width="160" height="70" rx="8" fill="var(--card)" stroke="var(--ink-soft)"
                   stroke-width="1.3" />
-                <text x="110" y="80" text-anchor="middle" fill="var(--ink)">회원 서비스</text>
+                <text x="110" y="80" text-anchor="middle" fill="var(--ink)">가입자 서비스</text>
 
                 <rect x="380" y="40" width="160" height="70" rx="8" fill="var(--card)" stroke="var(--rust)"
                   stroke-width="1.8" />
-                <text x="460" y="80" text-anchor="middle" fill="var(--rust)">주문 서비스</text>
+                <text x="460" y="80" text-anchor="middle" fill="var(--rust)">개통 서비스</text>
 
                 <rect x="730" y="40" width="160" height="70" rx="8" fill="var(--card)" stroke="var(--ink-soft)"
                   stroke-width="1.3" />
-                <text x="810" y="80" text-anchor="middle" fill="var(--ink)">매장 서비스</text>
+                <text x="810" y="80" text-anchor="middle" fill="var(--ink)">단말 서비스</text>
                 <text x="810" y="96" text-anchor="middle" font-size="10.5" font-weight="500"
-                  fill="var(--ink-soft)">(재고 차감)</text>
+                  fill="var(--ink-soft)">(단말 재고 차감)</text>
 
                 <rect x="380" y="210" width="160" height="70" rx="8" fill="var(--paper-2)" stroke="var(--ink-soft)"
                   stroke-width="1.3" stroke-dasharray="3 3" />
                 <text x="460" y="242" text-anchor="middle" fill="var(--ink)">Kafka Broker</text>
                 <text x="460" y="258" text-anchor="middle" font-size="10.5" font-weight="500"
-                  fill="var(--ink-soft)">(주문완료 Topic)</text>
+                  fill="var(--ink-soft)">(개통완료 Topic)</text>
 
                 <rect x="730" y="210" width="160" height="70" rx="8" fill="var(--card)" stroke="var(--ink-soft)"
                   stroke-width="1.3" />
-                <text x="810" y="242" text-anchor="middle" fill="var(--ink)">결제 서비스</text>
+                <text x="810" y="242" text-anchor="middle" fill="var(--ink)">과금 서비스</text>
                 <text x="810" y="258" text-anchor="middle" font-size="10.5" font-weight="500"
-                  fill="var(--ink-soft)">(결제 처리)</text>
+                  fill="var(--ink-soft)">(요금 부과)</text>
               </g>
 
               <line x1="380" y1="75" x2="194" y2="75" stroke="var(--rust)" stroke-width="2"
@@ -623,21 +623,21 @@ df_importance = pd.Series(importances, index=X.columns).sort_values(ascending=Fa
 
               <line x1="460" y1="110" x2="460" y2="206" stroke="var(--ink-soft)" stroke-width="1.6"
                 stroke-dasharray="4 4" marker-end="url(#kafkaArrow)" />
-              <text x="580" y="163" text-anchor="middle" font-size="11" font-weight="600" fill="var(--ink-soft)">Produce ·
-                주문완료 이벤트</text>
+              <text x="340" y="163" text-anchor="middle" font-size="11" font-weight="600" fill="var(--ink-soft)">Produce ·
+                개통완료 이벤트</text>
 
               <path d="M500,210 L500,190 L810,190 L810,110" fill="none" stroke="var(--ink-soft)" stroke-width="1.6"
                 stroke-dasharray="4 4" marker-end="url(#kafkaArrow)" />
               <text x="655" y="178" text-anchor="middle" font-size="11" font-weight="600" fill="var(--ink-soft)">Consume ·
-                재고 차감</text>
+                단말 재고 차감</text>
 
               <line x1="540" y1="245" x2="726" y2="245" stroke="var(--ink-soft)" stroke-width="1.6"
                 stroke-dasharray="4 4" marker-end="url(#kafkaArrow)" />
               <text x="633" y="233" text-anchor="middle" font-size="11" font-weight="600" fill="var(--ink-soft)">Consume ·
-                결제 처리</text>
+                과금 처리</text>
             </svg>
-            <figcaption>주문 서비스는 회원 정보 검증처럼 즉시 응답이 필요한 호출만 REST API로 동기 조회하고, 주문완료 이벤트는 Kafka에 발행(Produce)합니다.
-              매장·결제 서비스는 주문 서비스와 직접 연결되지 않고 각자 이벤트를 구독(Consume)해 재고 차감·결제 처리를 수행하므로, 한쪽 서비스가 느려지거나 장애가 나도
+            <figcaption>개통 서비스는 가입자 자격 검증처럼 즉시 응답이 필요한 호출만 REST API로 동기 조회하고, 개통완료 이벤트는 Kafka에 발행(Produce)합니다.
+              단말·과금 서비스는 개통 서비스와 직접 연결되지 않고 각자 이벤트를 구독(Consume)해 단말 재고 차감·요금 부과를 수행하므로, 한쪽 서비스가 느려지거나 장애가 나도
               나머지 흐름에 즉시 영향을 주지 않습니다.</figcaption>
           </figure>
         </div>
