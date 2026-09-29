@@ -554,23 +554,19 @@ df_importance = pd.Series(importances, index=X.columns).sort_values(ascending=Fa
         <dl class="star">
           <div>
             <dt><span class="star-badge">1</span>문제 상황</dt>
-            <dd>MSA 전환 직후, 분리된 가입자·개통·단말·과금 서비스 간 모든 연동을 REST API 동기 호출로만 처리해 특정 서비스 지연·장애가 호출 체인을 타고 전체
-              흐름에 전파되는 구조적 위험이 존재.</dd>
+            <dd>가입자·개통·단말·과금 서비스 간 모든 연동을 REST 동기 호출로만 처리해 장애 전파 위험이 존재.</dd>
           </div>
           <div>
             <dt><span class="star-badge">2</span>해결 과정</dt>
-            <dd>즉시 결과가 필요한 조회성 연동(개통 신청 시 가입자 자격 검증 등)은 REST API 동기 호출로 유지하고, 개통 완료 이후 단말 재고 차감·요금제 등록처럼 후속
-              처리가 이어지는 흐름은 Kafka Producer/Consumer로 전환해 "개통완료" 이벤트를 발행·구독하는 비동기 구조로 재설계.</dd>
+            <dd>조회성 호출은 REST 동기로 유지하고, 개통완료 이후 처리는 Kafka Producer/Consumer 비동기 구조로 전환.</dd>
           </div>
           <div>
             <dt><span class="star-badge">3</span>결과</dt>
-            <dd>단말(재고)·과금 서비스가 개통 서비스의 처리 상태와 무관하게 이벤트를 각자 소비해 처리하도록 분리되어, 한 서비스의 응답 지연이 다른 서비스의 대기
-              시간으로 직접 전파되지 않는 구조를 확보.</dd>
+            <dd>단말·과금 서비스가 개통 서비스와 무관하게 이벤트를 소비하도록 분리해 장애 전파를 차단하는 구조 확보.</dd>
           </div>
           <div>
             <dt><span class="star-badge">4</span>배운 점</dt>
-            <dd>모든 연동을 동기 호출로 통일하기보다, 호출의 실시간성 요구 여부를 기준으로 REST와 Kafka를 병행 설계하는 것이 MSA 안정성 확보에 더 효과적임을
-              체득.</dd>
+            <dd>호출의 실시간성 요구 여부에 따라 REST와 Kafka를 병행 설계하는 것이 MSA 안정성에 더 효과적임을 체득.</dd>
           </div>
         </dl>
 
@@ -638,7 +634,7 @@ df_importance = pd.Series(importances, index=X.columns).sort_values(ascending=Fa
               <text x="633" y="233" text-anchor="middle" font-size="11" font-weight="600" fill="var(--ink-soft)">Consume ·
                 과금 처리</text>
             </svg>
-            <figcaption>개통 서비스는 가입자 자격 검증처럼 즉시 응답이 필요한 호출만 REST API로 동기 조회하고, 개통완료 이벤트는 Kafka에 발행(Produce)합니다.
+            <figcaption>개통 서비스는 가입자 자격 검증처럼 즉시 응답이 필요한 호출만 REST API로 동기 조회하고, 개통완료 이벤트는 Kafka에 발행(Produce)합니다.<br>
               단말·과금 서비스는 개통 서비스와 직접 연결되지 않고 각자 이벤트를 구독(Consume)해 단말 재고 차감·요금 부과를 수행하므로, 한쪽 서비스가 느려지거나 장애가 나도
               나머지 흐름에 즉시 영향을 주지 않습니다.</figcaption>
           </figure>
